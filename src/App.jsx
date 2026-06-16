@@ -1,12 +1,14 @@
 import React from "react";
 import Landing from "./Pages/Landing";
+import Counting from './Pages/Counting';
 
 
 function App() {
 
   return (
     <div >
-        <Landing/>
+        {/* <Landing/> */}
+        <Counting/>
     </div>
   )
 }
