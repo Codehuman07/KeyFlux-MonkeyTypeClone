@@ -1,10 +1,11 @@
 import React from "react";
 import Background from "../components/Background";
 import BorderGlow from "../components/BorderGlow";
+import {useNavigate} from 'react-router-dom'
 
 function Landing() {
+    const navigate = useNavigate()
     return (
-        <Background>
             <div className="relative z-10 flex min-h-screen flex-col items-center justify-center gap-6 text-center">
                 <h1 className=" text-4xl text-white">Welcome to KeyFlux</h1>
                 <p className="text-lg text-gray-300">
@@ -21,12 +22,12 @@ function Landing() {
                     animated={false}
                     colors={['#c084fc', '#f472b6', '#38bdf8']}
                 >
-                    <div className="p-8 text-white cursor-pointer">
+                    <div className="p-8 text-white cursor-pointer" onClick={()=>{navigate('/Counting')}}>
                         <h2>Start Typing!!!</h2>
                     </div>
                 </BorderGlow>
             </div>
-        </Background>
+        
     );
 }
 
