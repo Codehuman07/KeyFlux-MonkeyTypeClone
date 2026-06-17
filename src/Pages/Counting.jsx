@@ -1,15 +1,22 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 import { useState,useEffect } from 'react';
 import Background from "../components/Background";
 function Counting() {
     const[count,setCount] = useState(5)
+    const navigate = useNavigate()
     useEffect(()=>{
-    const timer = setTimeout(()=>{
-        if(count>0){
-            setCount(count-1)
+        const timer = setTimeout(()=>{
+                if(count>0){
+                    setCount(count-1)
+                }
+            },1500)
+            return () => clearTimeout(timer)
+    },[count])
+    useEffect(()=>{
+        if(count===0){
+            navigate('/Typing')
         }
-    },1500)
-    return () => clearTimeout(timer)
     },[count])
     return (
         <>

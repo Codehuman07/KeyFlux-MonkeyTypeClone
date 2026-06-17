@@ -1,5 +1,4 @@
 import React from "react";
-import Background from "../components/Background";
 import BorderGlow from "../components/BorderGlow";
 import {useNavigate} from 'react-router-dom'
 
