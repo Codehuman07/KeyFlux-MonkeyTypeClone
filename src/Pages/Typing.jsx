@@ -6,6 +6,10 @@ function Typing() {
     const [started, setStarted] = useState(false)
     const [para, setPara] = useState("")
     const timeUsed = 60 - timer
+    const completed = textinput.length >= para.length
+    function refresh(){
+        window.location.reload()
+    }
     function paragraphgenerator(){
         const numb = Math.floor(Math.random()*10)
         setPara(paragrphs[numb])
@@ -33,12 +37,12 @@ function Typing() {
     }
     useEffect(() => {
         const time = setTimeout(() => {
-            if (timer > 0 && started === true) {
+            if (timer > 0 && started === true && completed===false) {
                 setTimer(timer - 1)
             }
         }, 1000)
         return () => clearTimeout(time)
-    }, [timer, started])
+    }, [timer, started, completed])
     return (
         <div className='z-10 min-h-screen flex flex-col items-center'>
             <h1 className='text-6xl text-white pt-8'>KeyFlux</h1>
@@ -63,6 +67,8 @@ function Typing() {
                     })}
                     </h1>
                 </div>
+                {/* <h1 className='text-white'>{completed.toString()}</h1> */}
+                {completed && <button className='text-white cursor-pointer border-2 border-white pr-7 pl-7 pt-3 pb-3' onClick={refresh}>Reset</button>}
                 <input type="text" value={textinput} onChange={onchange} autoFocus className='w-0 h-0 opacity-0' />
             </div>
         </div>
