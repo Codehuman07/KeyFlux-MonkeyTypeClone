@@ -3,6 +3,7 @@
 ## Project Overview
 
 KeyFlux is a typing test website inspired by Monkeytype. The goal of this project is to build a clean and responsive typing experience while learning React fundamentals such as state management, event handling, timers, and component-based architecture.
+In addition to core React concepts, this project is also an opportunity to learn how to integrate and customize modern UI components from community resources such as React Bits and similar component libraries.
 
 This project is intended as a frontend-only application and will not include authentication, databases, leaderboards, multiplayer functionality, or any backend services.
 
