@@ -10,7 +10,7 @@ function Counting() {
                 if(count>0){
                     setCount(count-1)
                 }
-            },1500)
+            },1000)
             return () => clearTimeout(timer)
     },[count])
     useEffect(()=>{
