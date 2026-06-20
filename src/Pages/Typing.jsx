@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { paragrphs } from '../components/paragraphs'
 function Typing() {
-    const [timer, setTimer] = useState(60)
+    const [timer, setTimer] = useState(6)
     const [textinput, setTextinput] = useState("")
     const [started, setStarted] = useState(false)
     const [para, setPara] = useState("")
     const timeUsed = 60 - timer
-    const completed = textinput.length >= para.length
+    const completed = (textinput.length >= para.length)
     function refresh(){
         window.location.reload()
     }
@@ -68,7 +68,7 @@ function Typing() {
                     </h1>
                 </div>
                 {/* <h1 className='text-white'>{completed.toString()}</h1> */}
-                {completed && <button className='text-white cursor-pointer border-2 border-white pr-7 pl-7 pt-3 pb-3' onClick={refresh}>Reset</button>}
+                {(completed || timer==0) && <button className='text-white cursor-pointer border-2 border-white pr-7 pl-7 pt-3 pb-3' onClick={refresh}>Reset</button>}
                 <input type="text" value={textinput} onChange={onchange} autoFocus className='w-0 h-0 opacity-0' />
             </div>
         </div>
