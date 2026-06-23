@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { paragrphs } from '../components/paragraphs'
 function Typing() {
-    const [timer, setTimer] = useState(6)
+    const [timer, setTimer] = useState(60)
     const [textinput, setTextinput] = useState("")
     const [started, setStarted] = useState(false)
     const [para, setPara] = useState("")
